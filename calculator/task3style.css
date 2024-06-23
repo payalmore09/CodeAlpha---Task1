@@ -1,0 +1,88 @@
+.calculator {
+  width: 380px;
+  margin: 150px auto;
+  padding: 40px;
+  border: 5px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.light-purple {
+  background-color: #d8d0eb;
+  color: #333; /* Text color */
+}
+
+.light-blue {
+  background-color: #add8e6;
+  color: #333; /* Text color */
+}
+
+.light-grey {
+  background-color: #939090;
+  color: #dbcdcd; /* Text color */
+}
+
+button:hover {
+  background-color: #a29999;
+}
+
+button:active {
+  animation: buttonPress 0.2s forwards;
+}
+
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+    background-color: inherit;
+  }
+  50% {
+    transform: scale(0.9);
+    background-color: #ccc;
+  }
+  100% {
+    transform: scale(1);
+    background-color: inherit;
+  }
+}
+
+@keyframes buttonBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+button.released {
+  animation: buttonBounce 0.3s;
+}
